@@ -24,11 +24,15 @@ pnpm-debug.log*
 *.tmp
 
 # ---------- 本地数据与密钥（绝不入库） ----------
+/data/
 *.sqlite
 *.sqlite3
 *.sqlite-journal
 *.sqlite-wal
 *.sqlite-shm
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
 .env
 .env.*
 *.pem

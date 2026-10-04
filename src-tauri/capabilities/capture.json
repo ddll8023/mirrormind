@@ -1,0 +1,12 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "capture",
+  "description": "快速记录仅访问已初始化的数据库，不允许自行建库或关闭连接。",
+  "windows": ["capture"],
+  "permissions": [
+    "core:default",
+    "core:window:allow-start-dragging",
+    "sql:allow-select",
+    "sql:allow-execute"
+  ]
+}

@@ -1,0 +1,19 @@
+/* 双窗口共享的基础令牌；字体仅使用系统字体，不产生外部请求。 */
+@theme {
+  --font-sans: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --color-ink: #243137;
+  --color-paper: #f7f8f5;
+  --color-accent: #266b58;
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  font-synthesis: none;
+}
+
+body { margin: 0; }
+button, textarea, input { font: inherit; }
+button:disabled { cursor: not-allowed; opacity: 0.55; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }

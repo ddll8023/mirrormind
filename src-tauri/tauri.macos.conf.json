@@ -1,0 +1,9 @@
+{
+  "bundle": {
+    "active": true,
+    "targets": ["app"],
+    "macOS": {
+      "signingIdentity": null
+    }
+  }
+}

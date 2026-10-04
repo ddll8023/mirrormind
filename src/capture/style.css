@@ -1,0 +1,7 @@
+/* 快速记录只扫描自身目录，避免主窗口样式进入其入口。 */
+@import "tailwindcss" source(none);
+@import "../styles/theme.css";
+@source "./";
+
+html, body, #app { height: 100%; overflow: hidden; }
+textarea { resize: none; }

@@ -1,0 +1,6 @@
+/* 主窗口样式单独生成，不参与快速记录的样式扫描。 */
+@import "tailwindcss" source(none);
+@import "../styles/theme.css";
+@source "./";
+
+body { min-width: 480px; }
