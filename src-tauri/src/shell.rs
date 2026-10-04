@@ -186,7 +186,7 @@ pub fn toggle_capture(app: &AppHandle) -> Result<(), AppError> {
 }
 
 /// 按当前暂停状态构造托盘菜单，菜单只触发系统操作，不承载记录规则。
-fn tray_menu(app: &AppHandle) -> Result<Menu, AppError> {
+fn tray_menu(app: &AppHandle) -> Result<Menu<tauri::Wry>, AppError> {
     let info = app.state::<HotkeyState>().snapshot()?;
     let items = [
         MenuItem::with_id(app, "capture", "快速记录", true, None::<&str>),
@@ -194,7 +194,7 @@ fn tray_menu(app: &AppHandle) -> Result<Menu, AppError> {
         MenuItem::with_id(app, "pause", if info.paused { "恢复快捷键" } else { "暂停快捷键" }, true, None::<&str>),
         MenuItem::with_id(app, "quit", "保存草稿并退出", true, None::<&str>),
     ];
-    let items: Vec<MenuItem> = items.into_iter().collect::<Result<_, _>>()
+    let items: Vec<MenuItem<tauri::Wry>> = items.into_iter().collect::<Result<_, _>>()
         .map_err(|error| AppError::new("TRAY_MENU", format!("托盘菜单无法创建：{error}")))?;
     let references: Vec<&dyn tauri::menu::IsMenuItem<tauri::Wry>> = items.iter()
         .map(|item| item as &dyn tauri::menu::IsMenuItem<tauri::Wry>).collect();

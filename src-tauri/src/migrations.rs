@@ -5,6 +5,7 @@ use sqlx::{migrate::{MigrationSource, Migrator}, SqlitePool};
 use tauri_plugin_sql::{Migration, MigrationKind};
 use crate::error::AppError;
 
+#[derive(Debug)]
 struct DeclaredMigrations(Vec<Migration>);
 
 impl MigrationSource<'static> for DeclaredMigrations {
