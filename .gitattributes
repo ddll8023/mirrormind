@@ -1,0 +1,29 @@
+# 默认按文本处理，检出后统一使用 LF（本项目在 Windows 与 macOS 双平台开发）
+* text=auto eol=lf
+
+# Windows 脚本必须保留 CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# 二进制资源不做换行符转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.icns binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+*.exe binary
+*.dll binary
+*.dylib binary
+
+# 锁文件由工具生成，不参与 diff 展示
+package-lock.json -diff linguist-generated
+pnpm-lock.yaml -diff linguist-generated
+Cargo.lock -diff linguist-generated
